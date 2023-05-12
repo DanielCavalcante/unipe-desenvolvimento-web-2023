@@ -8,17 +8,17 @@ import { TypeOrmModule } from '@nestjs/typeorm';
   imports: [
     ApiModule,
     TypeOrmModule.forRoot({
-      type: 'postgres',
-      port: 5432,
+      type: 'postgres', //mysql
+      port: 5432, // 3306
       host: 'localhost',
-      username: process.env.DATABASE_USERNAME,
-      password: process.env.DATABASE_PASSWORD,
-      database: process.env.DATABASE_NAME,
+      username: 'xuxinha',
+      password: 'xuxinhaEnena',
+      database: 'unipe-dev-web-2023',
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       migrations: [__dirname + '/migrations/*{.ts,.js}'],
-      migrationsRun: true,
+      migrationsRun: false,
       migrationsTableName: 'history',
-      synchronize: false,
+      synchronize: true,
     }),
   ],
   controllers: [AppController],
