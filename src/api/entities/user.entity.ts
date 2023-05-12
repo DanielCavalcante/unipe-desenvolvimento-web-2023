@@ -13,7 +13,7 @@ export class User {
   @Column({ length: 11 })
   cpf: string;
 
-  @Column({ name: 'birth_date' })
+  @Column({ name: 'birth_date', nullable: true })
   birthDate?: Date;
 
   @Column()
